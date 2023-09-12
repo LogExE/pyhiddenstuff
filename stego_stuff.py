@@ -6,7 +6,7 @@ def transform_spaces(txt: str, msg: bytes) -> str:
     res = []
     lines = txt.split("\n")
     for i in range(line_cnt):
-        line = lines[i] if i < len(lines) else ""
+        line = lines[i].rstrip() if i < len(lines) else ""
         if msg[idx] & (1 << bit):
             line += " "
         res.append(line)
